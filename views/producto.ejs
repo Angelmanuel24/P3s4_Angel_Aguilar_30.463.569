@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehículos</title>
+  <link rel="stylesheet" href="../stylesheets/tables.css">
+</head>
+<body>
+</head>
+<body>
+
+  <header>
+    <h1>Pagina Productos: <%= producto.length %></h1> <a href="/" class="button">Volver</a>
+  </header>
+  <br>
+</div>
+<div>
+  <table>
+      <tr>
+          <th>
+              <p>ID</p>
+          </th>
+          <th>
+              <p>Codigo</p>
+          </th>
+          <th>
+              <p>Nombre</p>
+          </th>
+          <th>
+              <p>Marca</p>
+          </th>
+          <th>
+              <p>Modelo</p>
+          </th>
+          <th>
+              <p>Descripcion</p>
+          </th>
+          <th>
+              <p>Precio</p>
+          </th>
+          <th>
+            <p>Categoría</p>
+        </th>
+      </tr>
+      <tr>
+          <% if (producto) { %>
+              <% for (let i=0; i < producto.length; i++){ %>
+                  <% if (producto) { %>
+      <tr>
+
+          <td>
+              <%= producto[i].id %>
+          </td>
+          <td>
+              <%= producto[i].code %>
+          </td>
+          <td>
+              <%= producto[i].name %>
+          </td>
+          <td>
+              <%= producto[i].brand %>
+          </td>
+          <td>
+              <%= producto[i].model %>
+          </td>
+          <td>
+              <%= producto[i].description %>
+          </td>
+          <td>
+            <%= producto[i].price %>
+        </td>
+        <td>
+          <%= producto[i].category_id %>
+      </td>
+          <td>
+              <div class="input">
+                <a href="/editproducto/<%=producto[i].id%>" class="button">Editar</a>
+                <a href="/deleteproducto/<%=producto[i].id%>" class="button">Eliminar</a>
+              </div>
+          </td>
+      </tr>
+      <% } %>
+          <% } %>
+              <% } else { %>
+                  <tr>
+                      <th>No hay productos en el sistema</th>
+                  </tr>
+                  <% } %>
+                      </tr>
+                    </table>
+                  </div>
+              </div>
+              <br>
+<a href="/agregarproducto" class="button">Insertar producto</a>
+</body>
+</html>

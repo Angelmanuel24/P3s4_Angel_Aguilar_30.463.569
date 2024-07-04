@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editando</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+    <a href="/producto" class="button">Volver</a>
+    <br>
+    <form action="/editproducto/" method="post">
+        <input type="hidden" value="<%= producto.id %>" name="id">
+        <label for="code">Código</label>
+        <input type="number" name="code" value="<%= producto.code %>" placeholder="Código del producto" required>
+        <label for="name">Nombre del Producto</label>
+        <input type="text" name="name" value="<%= producto.name %>" placeholder="Nombre del Producto" required>
+        <label for="brand">Marca</label>
+        <input type="text" name="brand" value="<%= producto.brand %>" placeholder="Marca del Producto" required>
+        <label for="model">Modelo</label>
+        <input type="text" name="model" value="<%= producto.model %>" placeholder="Modelo del Producto" required>
+        <label for="description">Descripción</label>
+        <textarea type="text" name="description" placeholder="Descripción del producto" required><%= producto.description %></textarea>
+        <label for="price">Precio</label>
+        <input type="text" name="price" value="<%= producto.price %>" placeholder="Precio del Producto" required>
+        <label for="category_id">Categoría</label>
+        <select name="category_id" required>
+            <option value="1">Nuevo</option>
+            <option value="2">Usado</option>
+        </select>
+        <input type="submit" value="Editar">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Vehículos</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <h1>Agregar Vehículos</h1> <br> <a href="producto" class="button">Volver</a><br>
+    </header>
+    <form action="/agregarproducto" method="post">
+        <label for="code">Código</label>
+        <input type="number" name="code" value="" placeholder="Código del producto" required>
+        <label for="name">Nombre del Producto</label>
+        <input type="text" name="name" value="" placeholder="Nombre del Producto" required>
+        <label for="brand">Marca</label>
+        <input type="text" name="brand" value="" placeholder="Marca del Producto" required>
+        <label for="model">Modelo</label>
+        <input type="text" name="model" value="" placeholder="Modelo del Producto" required>
+        <label for="description">Descripción</label>
+        <textarea type="text" name="description" value="" placeholder="Descripción del producto" required></textarea>
+        <label for="price">Precio</label>
+        <input type="text" name="price" value="" placeholder="Precio del Producto" required>
+        <label for="category_id">Categoría</label>
+        <select name="category_id" required>
+            <option value="1">Nuevo</option>
+            <option value="2">Usado</option>
+        </select>
+        <input type="submit" value="Agregar" href="/producto">
+    </form>
+    
+</body>
+</html>

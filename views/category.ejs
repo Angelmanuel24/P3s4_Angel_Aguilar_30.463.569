@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../stylesheets/tables.css">
+  <title>Mostrando Categorías</title>
+</head>
+<body>
+            <h1>Pagina Categorias <%= category.length %></h1> <a href="/" class="button">Volver</a>
+        <br>
+      <table>
+          <tr>
+              <th>
+                  <p>N°</p>
+              </th>
+              <th>
+                  <p>Nombre</p>
+              </th>
+              <td><a href="/agregarcategoria" class="button">Insertar categoría</a></td>
+          </tr>
+          <tr>
+              <% if (category) { %>
+                  <% for (let i=0; i < category.length; i++){ %>
+                      <% if (category) { %>
+          <tr>
+              <td>
+                  <%= (i + 1)  %>
+              </td>
+              <td>
+                  <%= category[i].name %>
+              </td>
+              <td>
+                  <div>
+                    <td><a href="/editcategory/<%=category[i].id%>" class="button">Editar</a>
+                      <a href="/deletecategory/<%=category[i].id%>" class="button">Eliminar</a>
+                  </div>
+              </td>
+          </tr>
+          <% } %>
+              <% } %>
+                  <% } else { %>
+                      <tr>
+                          <th>No hay categorias en el sistema</th>
+                      </tr>
+                      <% } %>
+                          </tr>
+      </table>
+  </div>
+
+
+</body>
+</html>           
